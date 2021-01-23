@@ -21,11 +21,9 @@ const arrOfTags = ["vegetarian", "dessert", "dinner", "salad", "soup"];
 function PopularRecipes(props) {
   const classes = useStyles();
 
-
   const [tagData, setTagData] = useState(arrOfTags[0]); // данние для заппроса
 
   const changeTagData = (data) => setTagData(data);
-
 
   return (
     <Grid container direction="column" alignItems="center">
@@ -40,7 +38,7 @@ function PopularRecipes(props) {
       <Grid item xs={12}>
         <ErrorBoundary variant="h5">
           <RecipesList
-            link={`https://api.spoonacular.com/recipes/random?apiKey=105c45c3c46749d4a2344c632ce5f2de&number=9&tags=${tagData}`}
+            link={`https://api.spoonacular.com/recipes/random?apiKey=105c45c3c46749d4a2344c632ce5f2de&number=8&tags=${tagData}`}
           />
         </ErrorBoundary>
       </Grid>

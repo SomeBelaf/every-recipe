@@ -1,0 +1,9 @@
+Autocomplete Recipe Search -->https://api.spoonacular.com/recipes/autocomplete?number={num}&query={string} --- главный поиск на главной странице
+Get Recipe Information --> https://api.spoonacular.com/recipes/{id}/information?includeNutrition=false --- поиск необходииого рецепта по id, вывод на отдельную страницу
+Get Recipe Equipment by ID --> https://api.spoonacular.com/recipes/{id}/equipmentWidget.json  --- заспрос вмемте с Get Recipe Information по id, на странице с рецептом отображить необходиыий инвентарь
+Get Similar Recipes --> https://api.spoonacular.com/recipes/{id}/similar  --- заспрос вмемте с Get Recipe Information по id, на странице с рецептом отображить похожие рецепты
+
+Get Random Recipes -->  https://api.spoonacular.com/recipes/random?number={num}&tags={string} ----- можна реальзовать поиск по тегам
+
+
+

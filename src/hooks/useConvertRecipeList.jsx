@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
-export function useConvertRecipeList(defaultData = null) {
+export default function useConvertRecipeList(defaultData = null) {
   const [data, setData] = useState(defaultData);
   const [result, setResult] = useState(undefined);
   useEffect(() => {
     if (!data) return false;
-    let convertedData = data.recipes.map((item) => {
+    const convertedData = data.recipes.map((item) => {
       return {
         id: item.id,
         name: item.title,
@@ -18,7 +18,7 @@ export function useConvertRecipeList(defaultData = null) {
         likes: item.aggregateLikes,
       };
     });
-    setResult(convertedData);
+    return setResult(convertedData);
   }, [data]);
   return [result, setData];
 }

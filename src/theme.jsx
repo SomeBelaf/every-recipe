@@ -1,5 +1,6 @@
 import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles";
 // #e9be79
+/*eslint-disable import/no-mutable-exports*/
 let theme = createMuiTheme({
   breakpoints: {
     values: {
@@ -204,6 +205,7 @@ let theme = createMuiTheme({
     },
   },
 });
+/*eslint-disable import/no-mutable-exports*/
 theme = responsiveFontSizes(theme);
 
 export default theme;

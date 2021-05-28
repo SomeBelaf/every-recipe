@@ -16,16 +16,17 @@ const useStyles = makeStyles((theme) => ({
       textShadow: `1px 1px ${theme.palette.common.white}`,
       fontWeight: "bold",
       letterSpacing: "1px",
+      whiteSpace: "nowrap",
     },
   },
 }));
 
-function Logo(props) {
+function Logo() {
   const classes = useStyles();
   return (
     <Box component="article" className={classes.logo}>
       <Link to="/">
-        <Typography variant="h4">Logo</Typography>
+        <Typography variant="h4">Recipe</Typography>
       </Link>
     </Box>
   );

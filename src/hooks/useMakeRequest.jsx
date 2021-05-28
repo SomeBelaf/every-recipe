@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-//url === https://api.spoonacular.com/recipes/?apiKey=105c45c3c46749d4a2344c632ce5f2de;
-// https://api.spoonacular.com/recipes/random?apiKey=105c45c3c46749d4a2344c632ce5f2de&number=6
-export function useMakeRequest(defaultUrl = "") {
+
+export default function useMakeRequest(defaultUrl = "") {
   const [url, setUrl] = useState(defaultUrl);
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -19,8 +18,8 @@ export function useMakeRequest(defaultUrl = "") {
           setHasError(true);
           throw new Error("Something went wrong");
         }
-        const data = await response.json();
-        setData(data);
+        const responseData = await response.json();
+        setData(responseData);
       } catch (err) {
         setHasError(true);
         setError(err.message);

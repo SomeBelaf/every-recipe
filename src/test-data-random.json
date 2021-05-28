@@ -1,0 +1,495 @@
+{
+  "recipes": [
+    {
+      "vegetarian": true,
+      "vegan": true,
+      "glutenFree": true,
+      "dairyFree": true,
+      "veryHealthy": false,
+      "cheap": false,
+      "veryPopular": false,
+      "sustainable": false,
+      "weightWatcherSmartPoints": 3,
+      "gaps": "no",
+      "lowFodmap": false,
+      "aggregateLikes": 18,
+      "spoonacularScore": 67.0,
+      "healthScore": 14.0,
+      "creditsText": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+      "license": "CC BY 3.0",
+      "sourceName": "Foodista",
+      "pricePerServing": 64.81,
+      "extendedIngredients": [
+        {
+          "id": 9202,
+          "aisle": "Produce",
+          "image": "mandarin-or-tangerines-or-clementines.jpg",
+          "consistency": "solid",
+          "name": "navel orange",
+          "nameClean": "navel orange",
+          "original": "1 navel orange",
+          "originalString": "1 navel orange",
+          "originalName": "navel orange",
+          "amount": 1.0,
+          "unit": "",
+          "meta": [],
+          "metaInformation": [],
+          "measures": {
+            "us": {
+              "amount": 1.0,
+              "unitShort": "",
+              "unitLong": ""
+            },
+            "metric": {
+              "amount": 1.0,
+              "unitShort": "",
+              "unitLong": ""
+            }
+          }
+        },
+        {
+          "id": 11957,
+          "aisle": "Produce",
+          "image": "fennel.png",
+          "consistency": "solid",
+          "name": "fennel bulb",
+          "nameClean": "fennel",
+          "original": "1 medium fennel bulb",
+          "originalString": "1 medium fennel bulb",
+          "originalName": "fennel bulb",
+          "amount": 1.0,
+          "unit": "medium",
+          "meta": [],
+          "metaInformation": [],
+          "measures": {
+            "us": {
+              "amount": 1.0,
+              "unitShort": "medium",
+              "unitLong": "medium"
+            },
+            "metric": {
+              "amount": 1.0,
+              "unitShort": "medium",
+              "unitLong": "medium"
+            }
+          }
+        },
+        {
+          "id": 1002068,
+          "aisle": "Oil, Vinegar, Salad Dressing",
+          "image": "vinegar-(white).jpg",
+          "consistency": "liquid",
+          "name": "white-wine vinegar",
+          "nameClean": "white wine vinegar",
+          "original": "3/4 tablespoon white-wine vinegar",
+          "originalString": "3/4 tablespoon white-wine vinegar",
+          "originalName": "white-wine vinegar",
+          "amount": 0.75,
+          "unit": "tablespoon",
+          "meta": [],
+          "metaInformation": [],
+          "measures": {
+            "us": {
+              "amount": 0.75,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            },
+            "metric": {
+              "amount": 0.75,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            }
+          }
+        },
+        {
+          "id": 1082047,
+          "aisle": "Spices and Seasonings",
+          "image": "salt.jpg",
+          "consistency": "solid",
+          "name": "kosher salt",
+          "nameClean": "kosher salt",
+          "original": "1/4 teaspoon kosher salt",
+          "originalString": "1/4 teaspoon kosher salt",
+          "originalName": "kosher salt",
+          "amount": 0.25,
+          "unit": "teaspoon",
+          "meta": [],
+          "metaInformation": [],
+          "measures": {
+            "us": {
+              "amount": 0.25,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
+            },
+            "metric": {
+              "amount": 0.25,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
+            }
+          }
+        },
+        {
+          "id": 1002030,
+          "aisle": "Spices and Seasonings",
+          "image": "pepper.jpg",
+          "consistency": "solid",
+          "name": "ground pepper",
+          "nameClean": "black pepper",
+          "original": "1/8 teaspoon fresh ground pepper",
+          "originalString": "1/8 teaspoon fresh ground pepper",
+          "originalName": "fresh ground pepper",
+          "amount": 0.125,
+          "unit": "teaspoon",
+          "meta": [
+            "fresh"
+          ],
+          "metaInformation": [
+            "fresh"
+          ],
+          "measures": {
+            "us": {
+              "amount": 0.125,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
+            },
+            "metric": {
+              "amount": 0.125,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
+            }
+          }
+        },
+        {
+          "id": 1034053,
+          "aisle": "Oil, Vinegar, Salad Dressing",
+          "image": "olive-oil.jpg",
+          "consistency": "liquid",
+          "name": "extra virgin olive oil",
+          "nameClean": "extra virgin olive oil",
+          "original": "1/8 cup extra virgin olive oil",
+          "originalString": "1/8 cup extra virgin olive oil",
+          "originalName": "extra virgin olive oil",
+          "amount": 0.125,
+          "unit": "cup",
+          "meta": [],
+          "metaInformation": [],
+          "measures": {
+            "us": {
+              "amount": 0.125,
+              "unitShort": "cups",
+              "unitLong": "cups"
+            },
+            "metric": {
+              "amount": 29.574,
+              "unitShort": "ml",
+              "unitLong": "milliliters"
+            }
+          }
+        },
+        {
+          "id": 9216,
+          "aisle": "Produce",
+          "image": "orange-zest.png",
+          "consistency": "solid",
+          "name": "orange zest",
+          "nameClean": "orange zest",
+          "original": "1/2 tablespoon orange zest",
+          "originalString": "1/2 tablespoon orange zest",
+          "originalName": "orange zest",
+          "amount": 0.5,
+          "unit": "tablespoon",
+          "meta": [],
+          "metaInformation": [],
+          "measures": {
+            "us": {
+              "amount": 0.5,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            },
+            "metric": {
+              "amount": 0.5,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            }
+          }
+        },
+        {
+          "id": 12120,
+          "aisle": "Baking",
+          "image": "hazelnuts.jpg",
+          "consistency": "solid",
+          "name": "hazelnuts",
+          "nameClean": "hazelnuts",
+          "original": "1/4 cup toasted hazelnuts",
+          "originalString": "1/4 cup toasted hazelnuts",
+          "originalName": "toasted hazelnuts",
+          "amount": 0.25,
+          "unit": "cup",
+          "meta": [
+            "toasted"
+          ],
+          "metaInformation": [
+            "toasted"
+          ],
+          "measures": {
+            "us": {
+              "amount": 0.25,
+              "unitShort": "cups",
+              "unitLong": "cups"
+            },
+            "metric": {
+              "amount": 59.147,
+              "unitShort": "ml",
+              "unitLong": "milliliters"
+            }
+          }
+        },
+        {
+          "id": 9079,
+          "aisle": "Dried Fruits;Produce",
+          "image": "dried-cranberries.jpg",
+          "consistency": "solid",
+          "name": "dried cranberries",
+          "nameClean": "dried cranberries",
+          "original": "handful of dried cranberries",
+          "originalString": "handful of dried cranberries",
+          "originalName": "dried cranberries",
+          "amount": 1.0,
+          "unit": "handful",
+          "meta": [
+            "dried"
+          ],
+          "metaInformation": [
+            "dried"
+          ],
+          "measures": {
+            "us": {
+              "amount": 1.0,
+              "unitShort": "handful",
+              "unitLong": "handful"
+            },
+            "metric": {
+              "amount": 1.0,
+              "unitShort": "handful",
+              "unitLong": "handful"
+            }
+          }
+        }
+      ],
+      "id": 642660,
+      "title": "Fennel and Orange Salad With Toasted Hazelnuts and Cranberries",
+      "readyInMinutes": 45,
+      "servings": 4,
+      "sourceUrl": "https://www.foodista.com/recipe/4J3YBFD6/fennel-and-orange-salad-with-toasted-hazelnuts-and-cranberries",
+      "image": "https://spoonacular.com/recipeImages/642660-556x370.jpg",
+      "imageType": "jpg",
+      "summary": "Need a <b>gluten free, dairy free, paleolithic, and lacto ovo vegetarian side dish</b>? Fennel and Orange Salad With Toasted Hazelnuts and Cranberries could be an excellent recipe to try. This recipe serves 4. One serving contains <b>167 calories</b>, <b>2g of protein</b>, and <b>12g of fat</b>. For <b>65 cents per serving</b>, this recipe <b>covers 7%</b> of your daily requirements of vitamins and minerals. This recipe from Foodista requires extra virgin olive oil, ground pepper, hazelnuts, and kosher salt. A couple people made this recipe, and 18 would say it hit the spot. <b>Christmas</b> will be even more special with this recipe. From preparation to the plate, this recipe takes approximately <b>approximately 45 minutes</b>. With a spoonacular <b>score of 67%</b>, this dish is good. Similar recipes are <a href=\"https://spoonacular.com/recipes/baby-spinach-salad-with-pears-red-onions-cranberries-and-toasted-hazelnuts-201726\">Baby Spinach Salad with Pears, Red Onions, Cranberries and Toasted Hazelnuts</a>, <a href=\"https://spoonacular.com/recipes/blood-orange-salad-with-shaved-fennel-and-hazelnuts-51144\">Blood Orange Salad With Shaved Fennel And Hazelnuts</a>, and <a href=\"https://spoonacular.com/recipes/fennel-orange-salad-with-toasted-pistachios-43207\">Fennel & Orange Salad With Toasted Pistachios</a>.",
+      "cuisines": [],
+      "dishTypes": [
+        "side dish",
+        "salad"
+      ],
+      "diets": [
+        "gluten free",
+        "dairy free",
+        "paleolithic",
+        "lacto ovo vegetarian",
+        "primal",
+        "vegan"
+      ],
+      "occasions": [
+        "christmas"
+      ],
+      "instructions": "Finely grate enough zest from the orange to measure 1/2 tablespoon. Cut peel, including all white pith, from the orange with a paring knife. Then cut segments free from membranes.\nCut out and discard core of fennel bulb, then cut bulbs crosswise into very thin slices, as thin as you can get them.\nWhisk together vinegar, zest, salt, and pepper in a small bowl until salt is dissolved, then add olive oil slowly in a stream, whisking until combined well.\nToast hazelnuts on medium heat on a dry skillet.\nToss fennel and oranges with vinaigrette in a large bowl until combined well.\nTop with toasted hazelnuts and dried cranberries. Garnish with a few fennel fronds.",
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            {
+              "number": 1,
+              "step": "Finely grate enough zest from the orange to measure 1/2 tablespoon.",
+              "ingredients": [
+                {
+                  "id": 9200,
+                  "name": "orange",
+                  "localizedName": "orange",
+                  "image": "orange.png"
+                }
+              ],
+              "equipment": []
+            },
+            {
+              "number": 2,
+              "step": "Cut peel, including all white pith, from the orange with a paring knife. Then cut segments free from membranes.",
+              "ingredients": [
+                {
+                  "id": 9200,
+                  "name": "orange",
+                  "localizedName": "orange",
+                  "image": "orange.png"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404745,
+                  "name": "knife",
+                  "localizedName": "knife",
+                  "image": "chefs-knife.jpg"
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "step": "Cut out and discard core of fennel bulb, then cut bulbs crosswise into very thin slices, as thin as you can get them.",
+              "ingredients": [
+                {
+                  "id": 11957,
+                  "name": "fennel bulb",
+                  "localizedName": "fennel bulb",
+                  "image": "fennel.png"
+                }
+              ],
+              "equipment": []
+            },
+            {
+              "number": 4,
+              "step": "Whisk together vinegar, zest, salt, and pepper in a small bowl until salt is dissolved, then add olive oil slowly in a stream, whisking until combined well.",
+              "ingredients": [
+                {
+                  "id": 4053,
+                  "name": "olive oil",
+                  "localizedName": "olive oil",
+                  "image": "olive-oil.jpg"
+                },
+                {
+                  "id": 2053,
+                  "name": "vinegar",
+                  "localizedName": "vinegar",
+                  "image": "vinegar-(white).jpg"
+                },
+                {
+                  "id": 1002030,
+                  "name": "pepper",
+                  "localizedName": "pepper",
+                  "image": "pepper.jpg"
+                },
+                {
+                  "id": 2047,
+                  "name": "salt",
+                  "localizedName": "salt",
+                  "image": "salt.jpg"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404661,
+                  "name": "whisk",
+                  "localizedName": "whisk",
+                  "image": "whisk.png"
+                },
+                {
+                  "id": 404783,
+                  "name": "bowl",
+                  "localizedName": "bowl",
+                  "image": "bowl.jpg"
+                }
+              ]
+            },
+            {
+              "number": 5,
+              "step": "Toast hazelnuts on medium heat on a dry skillet.",
+              "ingredients": [
+                {
+                  "id": 12120,
+                  "name": "hazelnuts",
+                  "localizedName": "hazelnuts",
+                  "image": "hazelnuts.jpg"
+                },
+                {
+                  "id": 18070,
+                  "name": "toast",
+                  "localizedName": "toast",
+                  "image": "toast"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404645,
+                  "name": "frying pan",
+                  "localizedName": "frying pan",
+                  "image": "pan.png"
+                }
+              ]
+            },
+            {
+              "number": 6,
+              "step": "Toss fennel and oranges with vinaigrette in a large bowl until combined well.",
+              "ingredients": [
+                {
+                  "id": 4135,
+                  "name": "vinaigrette",
+                  "localizedName": "vinaigrette",
+                  "image": "vinaigrette.jpg"
+                },
+                {
+                  "id": 9200,
+                  "name": "orange",
+                  "localizedName": "orange",
+                  "image": "orange.png"
+                },
+                {
+                  "id": 11957,
+                  "name": "fennel",
+                  "localizedName": "fennel",
+                  "image": "fennel.png"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404783,
+                  "name": "bowl",
+                  "localizedName": "bowl",
+                  "image": "bowl.jpg"
+                }
+              ]
+            },
+            {
+              "number": 7,
+              "step": "Top with toasted hazelnuts and dried cranberries.",
+              "ingredients": [
+                {
+                  "id": 9079,
+                  "name": "dried cranberries",
+                  "localizedName": "dried cranberries",
+                  "image": "dried-cranberries.jpg"
+                },
+                {
+                  "id": 12120,
+                  "name": "hazelnuts",
+                  "localizedName": "hazelnuts",
+                  "image": "hazelnuts.jpg"
+                }
+              ],
+              "equipment": []
+            },
+            {
+              "number": 8,
+              "step": "Garnish with a few fennel fronds.",
+              "ingredients": [
+                {
+                  "id": 11957,
+                  "name": "fennel",
+                  "localizedName": "fennel",
+                  "image": "fennel.png"
+                }
+              ],
+              "equipment": []
+            }
+          ]
+        }
+      ],
+      "originalId": null,
+      "spoonacularSourceUrl": "https://spoonacular.com/fennel-and-orange-salad-with-toasted-hazelnuts-and-cranberries-642660"
+    }
+  ]
+}

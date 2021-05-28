@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export function useConvertRecipe(variant = "normal") {
+export default function useConvertRecipe(variant = "normal") {
   const [data, setData] = useState(null);
   const [result, setResult] = useState(undefined);
   useEffect(() => {
@@ -39,7 +39,7 @@ export function useConvertRecipe(variant = "normal") {
         ),
       };
     }
-    setResult(convertedData, variant);
+    return setResult(convertedData, variant);
   }, [data, variant]);
   return [result, setData];
 }

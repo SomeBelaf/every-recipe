@@ -23,38 +23,44 @@ const styles = (theme) => ({
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { error: null, errorInfo: null, hasError: false };
+    this.state = { error: null, hasError: false };
   }
 
-  componentDidCatch(error, errorInfo) {
-    console.table("error", error.message);
-    console.table("errorInfo", errorInfo);
+  componentDidCatch(error) {
     this.setState({
       hasError: true,
-      error: error,
-      errorInfo: errorInfo,
+      error,
     });
   }
 
   render() {
-    const { classes, variant } = this.props;
-    if (this.state.hasError) {
+    const { classes, variant, children } = this.props;
+    const { hasError, error } = this.state;
+    if (hasError) {
       // Error path
       return (
         <Box component="article" className={classes.errorWrapper}>
           <Typography className={classes.errorText} variant={variant}>
-            {this.state.error.message}
+            {error.message}
           </Typography>
         </Box>
       );
     }
     // Normally, just render children
-    return this.props.children;
+    return children;
   }
 }
 
 ErrorBoundary.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
+  variant: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
+};
+ErrorBoundary.defaultProps = {
+  variant: "h3",
 };
 
 export default withStyles(styles)(ErrorBoundary);

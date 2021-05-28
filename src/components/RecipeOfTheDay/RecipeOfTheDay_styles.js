@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-export const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme) => ({
   loading: {
     padding: `${theme.spacing(3)}px 0 `,
     width: "fit-content",
@@ -97,3 +97,5 @@ export const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
 }));
+
+export default useStyles;

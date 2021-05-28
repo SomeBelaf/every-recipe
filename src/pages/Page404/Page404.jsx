@@ -1,10 +1,10 @@
 import React, { useRef, useEffect } from "react";
-/*---------------Import image---------------*/
-import bgImage from "../../images/parallax_bg.jpg";
 /*---------------Import Material UI components---------------*/
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+/*---------------Import image---------------*/
+import bgImage from "../../images/parallax_bg.jpg";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Page404(props) {
+function Page404() {
   const classes = useStyles();
   const parallaxElem = useRef();
   const parallaxWrapper = useRef();
@@ -52,7 +52,7 @@ function Page404(props) {
     const speed = layer.getAttribute("data-speed");
     const x = (width + e.pageX * speed) / 100;
     const y = (height + e.pageY * speed) / 100;
-    layer.style.transform = `translate(calc(-50% - ${x}px), calc(-50% - ${y}px)) `;
+    layer.style = `transform: translate(calc(-50% - ${x}px), calc(-50% - ${y}px)) `; // eslint-disable-line no-param-reassign
   }
 
   useEffect(() => {

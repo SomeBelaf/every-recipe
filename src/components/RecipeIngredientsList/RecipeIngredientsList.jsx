@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-/*---------------Import components---------------*/
-import CustomCheckbox from "../CustomCheckbox/CustomCheckbox";
-/*---------------Import Animation--------------*/
-import ScrollAnimation from "react-animate-on-scroll";
-import "animate.css/animate.min.css";
 /*---------------Import Material UI components---------------*/
 import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
+/*---------------Import Animation--------------*/
+import ScrollAnimation from "react-animate-on-scroll";
+import "animate.css/animate.min.css";
+/*---------------Import components---------------*/
+import CustomCheckbox from "../CustomCheckbox/CustomCheckbox";
 
 function RecipeIngredientsList({ ingredients, isRow, animate }) {
   const [ingredientsList, setIngredientList] = useState(
@@ -61,12 +61,13 @@ function RecipeIngredientsList({ ingredients, isRow, animate }) {
   );
 }
 
+RecipeIngredientsList.propTypes = {
+  ingredients: PropTypes.arrayOf(PropTypes.string).isRequired,
+  isRow: PropTypes.bool.isRequired,
+  animate: PropTypes.bool,
+};
 RecipeIngredientsList.defaultProps = {
   animate: false,
-};
-RecipeIngredientsList.propTypes = {
-  ingredients: PropTypes.array.isRequired,
-  isRow: PropTypes.bool.isRequired,
 };
 
 export default RecipeIngredientsList;

@@ -65,7 +65,7 @@ function RecipePreview(props) {
 }
 
 RecipePreview.propTypes = {
-  image: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired, // eslint-disable-line react/no-unused-prop-types
   title: PropTypes.string.isRequired,
 };
 

@@ -1,8 +1,19 @@
 import React, { useEffect } from "react";
-import PropTypes from "prop-types";
+/*---------------Import Material UI components---------------*/
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
+import Typography from "@material-ui/core/Typography";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import { useTheme } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+/*---------------Import parallax---------------*/
+import { Parallax, Background } from "react-parallax";
+/*---------------Import Animation--------------*/
+import ScrollAnimation from "react-animate-on-scroll";
+import "animate.css/animate.min.css";
 /*---------------Import hooks---------------*/
-import { useMakeRequest } from "../../hooks/useMakeRequest";
-import { useConvertRecipe } from "../../hooks/useConvertRecipe";
+import useMakeRequest from "../../hooks/useMakeRequest";
+import useConvertRecipe from "../../hooks/useConvertRecipe";
 /*---------------Import components---------------*/
 import RoundedLink from "../RoundedLink/RoundedLink";
 import SectionTitle from "../SectionTitle/SectionTitle";
@@ -11,27 +22,16 @@ import GlutenFreeIcon from "../GlutenFreeIcon/GlutenFreeIcon";
 import LactoseFreeIcon from "../LactoseFreeIcon/LactoseFreeIcon";
 import VeganIcon from "../VeganIcon/VeganIcon";
 import VegetarianIcon from "../VegetarianIcon/VegetarianIcon";
-import { Loading } from "../../customizedComponents";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
+import { Loading } from "../../customizedComponents";
 /*---------------Import image---------------*/
 import parallaxBg from "../../images/parallax_bg.jpg";
-/*---------------Import parallax---------------*/
-import { Parallax, Background } from "react-parallax";
-/*---------------Import Animation--------------*/
-import ScrollAnimation from "react-animate-on-scroll";
-import "animate.css/animate.min.css";
-/*---------------Import Material UI components---------------*/
-import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
-import Typography from "@material-ui/core/Typography";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import { useTheme } from "@material-ui/core/styles";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
-import { useStyles } from "./RecipeOfTheDay_styles";
+/*---------------Import styles---------------*/
+import useStyles from "./RecipeOfTheDay_styles";
 
-// import testData from "../../test-data-one.json";
+// import testData from "../../test-data-random.json";
 
-function RecipeOfTheDay(props) {
+function RecipeOfTheDay() {
   const classes = useStyles();
 
   const theme = useTheme();
@@ -44,9 +44,8 @@ function RecipeOfTheDay(props) {
     makeRequest(
       `https://api.spoonacular.com/recipes/random?apiKey=105c45c3c46749d4a2344c632ce5f2de&number=1`
     );
-    console.log(data);
     setData(data);
-    console.log(convertedData);
+    // setData(testData);
   }, [makeRequest, data, setData, convertedData]);
 
   const link = convertedData && `/recipe/${convertedData.id}`;
@@ -168,9 +167,5 @@ function RecipeOfTheDay(props) {
     </Grid>
   );
 }
-
-RecipeOfTheDay.propTypes = {
-  setRecipeId: PropTypes.func,
-};
 
 export default RecipeOfTheDay;

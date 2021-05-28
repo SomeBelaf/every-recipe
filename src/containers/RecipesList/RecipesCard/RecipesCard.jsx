@@ -1,17 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import eye from "../../../images/svg/eye.svg";
-/*---------------Import react-router-dom--------------*/
-import { Link } from "react-router-dom";
-/*---------------Import components---------------*/
-import RoundedLink from "../../../components/RoundedLink/RoundedLink";
-import DishTypeList from "../../DishTypeList/DishTypeList";
-import GlutenFreeIcon from "../../../components/GlutenFreeIcon/GlutenFreeIcon";
-import LactoseFreeIcon from "../../../components/LactoseFreeIcon/LactoseFreeIcon";
-import VeganIcon from "../../../components/VeganIcon/VeganIcon";
-import VegetarianIcon from "../../../components/VegetarianIcon/VegetarianIcon";
-/*---------------Import images---------------*/
-import image_err from "../../../images/image_err.jpg";
 /*---------------Import Material UI components---------------*/
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
@@ -22,6 +10,18 @@ import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import { makeStyles } from "@material-ui/core/styles";
+/*---------------Import react-router-dom--------------*/
+import { Link } from "react-router-dom";
+/*---------------Import components---------------*/
+import RoundedLink from "../../../components/RoundedLink/RoundedLink";
+import DishTypeList from "../../DishTypeList/DishTypeList";
+import GlutenFreeIcon from "../../../components/GlutenFreeIcon/GlutenFreeIcon";
+import LactoseFreeIcon from "../../../components/LactoseFreeIcon/LactoseFreeIcon";
+import VeganIcon from "../../../components/VeganIcon/VeganIcon";
+import VegetarianIcon from "../../../components/VegetarianIcon/VegetarianIcon";
+/*---------------Import images---------------*/
+import imageErr from "../../../images/image_err.jpg";
+import eye from "../../../images/svg/eye.svg";
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -100,7 +100,7 @@ function RecipeCard(props) {
     isVegetarian,
     isLactoseFree,
     isGlutenFree,
-    image,
+    cardImage,
     dishTypes,
     likes,
   } = props;
@@ -110,7 +110,7 @@ function RecipeCard(props) {
     <Card component="section" className={classes.card}>
       <Link to={link} className={classes.cardImageLink}>
         <CardMedia
-          image={image ? image : image_err}
+          image={cardImage || imageErr}
           className={classes.cardImage}
         />
       </Link>
@@ -160,15 +160,14 @@ function RecipeCard(props) {
 }
 
 RecipeCard.propTypes = {
-  id: PropTypes.number,
-  name: PropTypes.string,
-  isVegan: PropTypes.bool,
-  isVegetarian: PropTypes.bool,
-  isLactoseFree: PropTypes.bool,
-  isGlutenFree: PropTypes.bool,
-  image: PropTypes.string,
-  dishTypes: PropTypes.array,
-  likes: PropTypes.number,
-  handleSelectedCard: PropTypes.func,
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  isVegan: PropTypes.bool.isRequired,
+  isVegetarian: PropTypes.bool.isRequired,
+  isLactoseFree: PropTypes.bool.isRequired,
+  isGlutenFree: PropTypes.bool.isRequired,
+  cardImage: PropTypes.string.isRequired,
+  dishTypes: PropTypes.arrayOf(PropTypes.string).isRequired,
+  likes: PropTypes.number.isRequired,
 };
 export default RecipeCard;

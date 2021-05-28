@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+/*---------------Import Material UI components---------------*/
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
+import { makeStyles } from "@material-ui/core/styles";
 /*---------------Import components---------------*/
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import RecipesList from "../RecipesList/RecipesList";
 import TagsList from "../TagsList/TagsList";
 import ErrorBoundary from "../../components/ErrorBoundary/ErrorBoundary";
-/*---------------Import Material UI components---------------*/
-import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
-import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   tagListWrapper: {
@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 
 const arrOfTags = ["vegetarian", "dessert", "dinner", "salad", "soup"];
 
-function PopularRecipes(props) {
+function PopularRecipes() {
   const classes = useStyles();
 
   const [tagData, setTagData] = useState(arrOfTags[0]); // данние для заппроса

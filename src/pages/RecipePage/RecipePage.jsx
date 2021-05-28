@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
-import listIcon from "../../images/list.png";
-import bookIcon from "../../images/book.png";
+/*---------------Import react-router---------------*/
+import { useParams } from "react-router-dom";
+/*---------------Import Material UI components---------------*/
+import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
+import { makeStyles } from "@material-ui/core/styles";
 /*---------------Import hooks---------------*/
-import { useMakeRequest } from "../../hooks/useMakeRequest";
-import { useConvertRecipe } from "../../hooks/useConvertRecipe";
+import useMakeRequest from "../../hooks/useMakeRequest";
+import useConvertRecipe from "../../hooks/useConvertRecipe";
 /*---------------Import components---------------*/
 import { Loading } from "../../customizedComponents";
 import PrintButton from "../../components/PrintButton/PrintButton";
@@ -18,13 +23,9 @@ import RecipeInstruction from "../../components/RecipeInstruction/RecipeInstruct
 import NutritionFacts from "../../components/NutritionFacts/NutritionFacts";
 import RequiredEquipment from "../../components/RequiredEquipment/RequiredEquipment";
 import ModalPrintPreview from "../../components/ModalPrintPreview/ModalPrintPreview";
-/*---------------Import react-router---------------*/
-import { useParams } from "react-router-dom";
-/*---------------Import Material UI components---------------*/
-import Container from "@material-ui/core/Container";
-import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
-import { makeStyles } from "@material-ui/core/styles";
+/*---------------Import images---------------*/
+import listIcon from "../../images/list.png";
+import bookIcon from "../../images/book.png";
 
 // import testData from "../../test-data-one.json";
 
@@ -61,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function RecipePage(props) {
+function RecipePage() {
   const classes = useStyles();
 
   const { recipeId } = useParams();
@@ -89,6 +90,7 @@ function RecipePage(props) {
       `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=105c45c3c46749d4a2344c632ce5f2de`
     );
     setDataToConvert(recipeData); // конвертировать данные рецепта || заменить testData на mainData
+    // setDataToConvert(testData);
   }, [
     recipeId,
     makeRecipeRequest,
@@ -98,7 +100,7 @@ function RecipePage(props) {
   ]);
 
   return (
-    <Container maxWidth={false} disableGutters={true}>
+    <Container maxWidth={false} disableGutters>
       {recipeIsLoading || convertedRecipeData === undefined ? (
         <Box className={classes.loading}>
           <Loading size={90} />
@@ -180,13 +182,7 @@ function RecipePage(props) {
             onClose={handleClose}
             recipeId={recipeId}
             title={convertedRecipeData.name}
-            isVegan={convertedRecipeData.isVegan}
-            isVegetarian={convertedRecipeData.isVegetarian}
-            isLactoseFree={convertedRecipeData.isLactoseFree}
-            isGlutenFree={convertedRecipeData.isGlutenFree}
             image={convertedRecipeData.image}
-            readyInMinutes={convertedRecipeData.readyInMinutes}
-            servings={convertedRecipeData.servings}
             ingredients={convertedRecipeData.ingredients}
             instruction={convertedRecipeData.instruction}
           />

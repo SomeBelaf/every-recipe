@@ -1,22 +1,22 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-/*---------------Import hooks---------------*/
-import { useMakeRequest } from "../../hooks/useMakeRequest";
-import { useConvertRecipeList } from "../../hooks/useConvertRecipeList";
-/*---------------Import components---------------*/
-import RecipesCard from "./RecipesCard/RecipesCard";
-import { Loading } from "../../customizedComponents";
-/*---------------Import Animation--------------*/
-import ScrollAnimation from "react-animate-on-scroll";
-import "animate.css/animate.min.css";
 /*---------------Import Material UI components---------------*/
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
+/*---------------Import Animation--------------*/
+import ScrollAnimation from "react-animate-on-scroll";
+import "animate.css/animate.min.css";
+/*---------------Import hooks---------------*/
+import useMakeRequest from "../../hooks/useMakeRequest";
+import useConvertRecipeList from "../../hooks/useConvertRecipeList";
+/*---------------Import components---------------*/
+import RecipesCard from "./RecipesCard/RecipesCard";
+import { Loading } from "../../customizedComponents";
 
 // import testData from "../../test-data-info.json";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   loading: {
     width: "fit-content",
     height: 400,
@@ -32,7 +32,8 @@ function RecipesList({ link }) {
   useEffect(() => {
     makeRequest(link);
     setData(data);
-  }, [link, makeRequest, data, setData]);
+    // setData(testData);
+  }, [link, makeRequest, data, setData, convertedData]);
 
   if (hasError) {
     throw new Error(error);
@@ -57,7 +58,7 @@ function RecipesList({ link }) {
               isVegetarian={item.isVegetarian}
               isLactoseFree={item.isLactoseFree}
               isGlutenFree={item.isGlutenFree}
-              image={item.image}
+              cardImage={item.image}
               dishTypes={item.dishTypes}
               likes={item.likes}
             />
@@ -81,7 +82,6 @@ function RecipesList({ link }) {
 
 RecipesList.propTypes = {
   link: PropTypes.string.isRequired,
-  setRecipeId: PropTypes.func,
 };
 
 export default RecipesList;

@@ -1,12 +1,12 @@
 import React from "react";
-/*---------------Import image---------------*/
-import gluten_free from "../../images/gluten_free.png";
 /*---------------Import Material UI components---------------*/
 import Grid from "@material-ui/core/Grid";
 import Tooltip from "@material-ui/core/Tooltip";
 import { makeStyles } from "@material-ui/core/styles";
+/*---------------Import image---------------*/
+import glutenFree from "../../images/gluten_free.png";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   container: {
     marginRight: 4,
     marginLeft: 4,
@@ -17,16 +17,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function GlutenFreeIcon(props) {
+function GlutenFreeIcon() {
   const classes = useStyles();
   return (
     <Grid item className={classes.container}>
       <Tooltip title="Gluten free" placement="top">
         <img
-          src={gluten_free}
+          src={glutenFree}
           alt="Gluten free"
           className={classes.GlutenFreeImage}
-        ></img>
+        />
       </Tooltip>
     </Grid>
   );

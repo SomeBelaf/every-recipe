@@ -61,18 +61,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function RoundedLink(props) {
-  //   const { to } = props;
+function RoundedLink({ children, ...props }) {
   const classes = useStyles();
   return (
     <Link className={classes.link} {...props}>
-      {props.children}
+      {children}
     </Link>
   );
 }
 
 RoundedLink.propTypes = {
-  to: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
 };
 
 export default RoundedLink;

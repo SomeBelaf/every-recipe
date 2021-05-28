@@ -43,8 +43,8 @@ function InputWithAutocomplete(props) {
       includeInputInList
       filterSelectedOptions
       disableClearable
-      autoHighlight={true}
-      getOptionSelected={(option, value) => option === value}
+      autoHighlight
+      getOptionSelected={(option, val) => option === val}
       getOptionLabel={(option) => option}
       options={options}
       loading={loading}
@@ -78,10 +78,13 @@ function InputWithAutocomplete(props) {
 }
 
 InputWithAutocomplete.propTypes = {
-  loading: PropTypes.bool,
-  data: PropTypes.array,
-  value: PropTypes.string,
+  loading: PropTypes.bool.isRequired,
+  onEnterPress: PropTypes.func.isRequired,
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  value: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   changeValue: PropTypes.func.isRequired,
   changeRecipeId: PropTypes.func.isRequired,
 };
+
 export default InputWithAutocomplete;

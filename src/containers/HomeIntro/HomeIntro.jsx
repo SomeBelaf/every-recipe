@@ -1,17 +1,17 @@
 import React from "react";
-/*---------------Import image---------------*/
-import home_bg from "../../images/home_bg.jpeg";
+/*---------------Import Material UI components---------------*/
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
 /*---------------Import Animation--------------*/
 import ScrollAnimation from "react-animate-on-scroll";
 import "animate.css/animate.min.css";
 /*---------------Import components---------------*/
 import ImageBg from "../../components/ImageBg/ImageBg";
 import HomeForm from "../HomeForm/HomeForm";
-/*---------------Import Material UI components---------------*/
-import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
-import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
+/*---------------Import image---------------*/
+import homeBg from "../../images/home_bg.jpeg";
 
 const useStyles = makeStyles((theme) => ({
   hero: {
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function HomeIntro(props) {
+function HomeIntro() {
   const classes = useStyles();
 
   return (
@@ -63,7 +63,7 @@ function HomeIntro(props) {
           animatePreScroll
           animateOnce
         >
-          <ImageBg src={home_bg} height={"50vh"} breakpointMdHeight={"100vh"} />
+          <ImageBg src={homeBg} height="50vh" breakpointMdHeight="100vh" />
         </ScrollAnimation>
       </Grid>
       <Grid
@@ -83,7 +83,7 @@ function HomeIntro(props) {
         >
           <Grid item xs={12} lg={10} className={classes.homeIntroContent}>
             <Typography variant="subtitle1" className={classes.heroSubTitle}>
-              Welcome to
+              Welcome to Recipe
             </Typography>
             <Typography variant="h3" className={classes.heroTitle}>
               Search for your favorite recipes

@@ -42,13 +42,18 @@ function RecipeSection({ children, title, withIcon, icon }) {
   );
 }
 
-RecipeSection.defaultProps = {
-  withIcon: false,
-};
 RecipeSection.propTypes = {
   title: PropTypes.string.isRequired,
-  withIcon: PropTypes.bool.isRequired,
+  withIcon: PropTypes.bool,
   icon: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
+};
+RecipeSection.defaultProps = {
+  withIcon: false,
+  icon: null,
 };
 
 export default RecipeSection;

@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-/*---------------Import hooks---------------*/
-import { useMakeRequest } from "../../hooks/useMakeRequest";
-import { useConvertEquipment } from "../../hooks/useConvertEquipment";
-/*---------------Import components---------------*/
-import { Loading } from "../../customizedComponents";
 /*---------------Import Material UI components---------------*/
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+/*---------------Import hooks---------------*/
+import useMakeRequest from "../../hooks/useMakeRequest";
+import useConvertEquipment from "../../hooks/useConvertEquipment";
+/*---------------Import components---------------*/
+import { Loading } from "../../customizedComponents";
 
 // import testEquipmentData from "../../test-data-equipment.json";
 
@@ -55,15 +55,15 @@ function RequiredEquipment({ recipeId }) {
     equipmentIsLoading,
   ] = useMakeRequest();
 
-  const [convertedEquipmentData, setEquipmentData] = useConvertEquipment(
-    equipmentData
-  );
+  const [convertedEquipmentData, setEquipmentData] =
+    useConvertEquipment(equipmentData);
 
   useEffect(() => {
     makeEquipmentRequest(
       `https://api.spoonacular.com/recipes/${recipeId}/equipmentWidget.json?apiKey=105c45c3c46749d4a2344c632ce5f2de`
     );
     setEquipmentData(equipmentData);
+    // setEquipmentData(testEquipmentData);
   }, [recipeId, makeEquipmentRequest, setEquipmentData, equipmentData]);
 
   if (hasError) {
@@ -80,7 +80,7 @@ function RequiredEquipment({ recipeId }) {
         <Typography variant="h5" className={classes.sectionTitle}>
           Required Equipment
         </Typography>
-        <Box component="hr" className={classes.smallLine}></Box>
+        <Box component="hr" className={classes.smallLine} />
       </Grid>
       {convertedEquipmentData.map((item, i) => (
         <Grid key={i} item container alignItems="center" xs={12} spacing={1}>

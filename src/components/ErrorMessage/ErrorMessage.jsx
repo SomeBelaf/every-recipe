@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 function ErrorMessage(props) {
   const { hasError, errorInfo, variant } = props;
   const classes = useStyles(props);
-  let isError = (
+  const isError = (
     <Box component="article" className={classes.errorWrapper}>
       <Typography className={classes.errorText} variant={variant}>
         {errorInfo}

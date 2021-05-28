@@ -1,6 +1,8 @@
+import React from "react";
+import PropTypes from "prop-types";
+
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
-
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 const useStyles = makeStyles((theme) => ({
@@ -26,17 +28,22 @@ const stylesLoading = makeStyles(
   { name: "MuiCircularProgress" }
 );
 
-function RoundedButton(props) {
+function RoundedButton({ children, ...props }) {
   const classes = useStyles();
   return (
     <Button className={classes.button} {...props}>
-      {props.children}
+      {children}
     </Button>
   );
 }
-function Loading(props) {
+
+function Loading({ ...props }) {
   stylesLoading();
-  return <CircularProgress {...props}>{props.children}</CircularProgress>;
+  return <CircularProgress {...props} />;
 }
+
+RoundedButton.propTypes = {
+  children: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export { RoundedButton, Loading };

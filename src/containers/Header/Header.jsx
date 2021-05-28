@@ -2,11 +2,11 @@ import React from "react";
 /*---------------Import Animation--------------*/
 import ScrollAnimation from "react-animate-on-scroll";
 import "animate.css/animate.min.css";
-/*---------------Import components---------------*/
-import Logo from "./Logo/Logo";
 /*---------------Import Material UI components---------------*/
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
+/*---------------Import components---------------*/
+import Logo from "./Logo/Logo";
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Header(props) {
+function Header() {
   const classes = useStyles();
   return (
     <Grid

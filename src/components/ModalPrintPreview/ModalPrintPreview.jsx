@@ -1,16 +1,5 @@
 import React, { useState, useRef } from "react";
 import PropTypes from "prop-types";
-import listIcon from "../../images/list.png";
-import bookIcon from "../../images/book.png";
-/*---------------Import components---------------*/
-import PrintButton from "../PrintButton/PrintButton";
-import RecipeImage from "../RecipeImage/RecipeImage";
-import RecipeFeatures from "../RecipeFeatures/RecipeFeatures";
-import RecipeSection from "../RecipeSection/RecipeSection";
-import RecipeIngredientsList from "../RecipeIngredientsList/RecipeIngredientsList";
-import RecipeInstruction from "../RecipeInstruction/RecipeInstruction";
-import NutritionFacts from "../../components/NutritionFacts/NutritionFacts";
-import RequiredEquipment from "../../components/RequiredEquipment/RequiredEquipment";
 /*---------------Import Material UI components---------------*/
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
@@ -24,6 +13,16 @@ import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import { makeStyles } from "@material-ui/core/styles";
+/*---------------Import components---------------*/
+import PrintButton from "../PrintButton/PrintButton";
+import RecipeImage from "../RecipeImage/RecipeImage";
+import RecipeSection from "../RecipeSection/RecipeSection";
+import RecipeIngredientsList from "../RecipeIngredientsList/RecipeIngredientsList";
+import RecipeInstruction from "../RecipeInstruction/RecipeInstruction";
+import NutritionFacts from "../NutritionFacts/NutritionFacts";
+/*---------------Import images---------------*/
+import listIcon from "../../images/list.png";
+import bookIcon from "../../images/book.png";
 
 const useStyles = makeStyles((theme) => ({
   modalTitle: {
@@ -36,35 +35,23 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.main,
     marginBottom: theme.spacing(2),
   },
+  modalCenter: {
+    margin: "0 auto",
+  },
 }));
 
 function ModalPrintPreview(props) {
-  const {
-    onClose,
-    open,
-    recipeId,
-    title,
-    isVegan,
-    isVegetarian,
-    isLactoseFree,
-    isGlutenFree,
-    image,
-    readyInMinutes,
-    servings,
-    ingredients,
-    instruction,
-  } = props;
+  const { onClose, open, recipeId, title, image, ingredients, instruction } =
+    props;
   const classes = useStyles();
 
   const modalContent = useRef();
 
   const defaultValue = {
     "Recipe Image": false,
-    "Recipe Features": false,
     "Recipe Ingredients": true,
     "Recipe Instruction": true,
     "Nutrition Facts": false,
-    "Required Equipment": false,
   };
   const [requiredSections, setRequiredSections] = useState(defaultValue);
 
@@ -76,16 +63,16 @@ function ModalPrintPreview(props) {
   };
 
   function renderRequiredSections(state, componentName, component) {
+    let result = null;
     const stateArr = Object.entries(state);
-    for (let i = 0; i <= Object.entries(state).length; i++) {
+    for (let i = 0; i < Object.entries(state).length; i += 1) {
       const name = stateArr[i][0];
       const isChecked = stateArr[i][1];
       if (componentName === name && isChecked) {
-        return component;
-      } else if (i === stateArr.length - 1) {
-        return null;
+        result = component;
       }
     }
+    return result;
   }
 
   function printHTML(input) {
@@ -99,7 +86,7 @@ function ModalPrintPreview(props) {
     iframe.contentWindow.document.head.innerHTML = styles;
     iframe.contentWindow.document.body.innerHTML = input; // write the HTML to be printed
     iframe.contentWindow.print(); // print it
-    document.body.removeChild(iframe); // remove the iframe from the DOM
+    // document.body.removeChild(iframe); // remove the iframe from the DOM
   }
 
   return (
@@ -107,10 +94,10 @@ function ModalPrintPreview(props) {
       onClose={onClose}
       aria-labelledby="modal-print-preview"
       open={open}
-      fullWidth={true}
+      fullWidth
       maxWidth="lg"
     >
-      <DialogTitle disableTypography={true} className={classes.modalTitle}>
+      <DialogTitle disableTypography className={classes.modalTitle}>
         <Typography variant="h5">Print Preview</Typography>
         {onClose ? (
           <IconButton aria-label="close" onClick={onClose}>
@@ -152,8 +139,7 @@ function ModalPrintPreview(props) {
           alignItems="center"
           ref={modalContent}
         >
-          <Grid container item xs="auto" style={{ margin: "0 auto" }}>
-            {/*исправить, убрать style*/}
+          <Grid container item xs="auto" className={classes.modalCenter}>
             <Typography variant="h2" className={classes.recipeTitle}>
               {title}
             </Typography>
@@ -161,22 +147,9 @@ function ModalPrintPreview(props) {
           {renderRequiredSections(
             requiredSections,
             "Recipe Image",
-            <Grid container item xs={8} style={{ margin: "0 auto" }}>
-              {/*исправить, убрать style*/}
+            <Grid container item xs={8} className={classes.modalCenter}>
               <RecipeImage image={image} />
             </Grid>
-          )}
-          {renderRequiredSections(
-            requiredSections,
-            "Recipe Features",
-            <RecipeFeatures
-              isVegan={isVegan}
-              isVegetarian={isVegetarian}
-              isLactoseFree={isLactoseFree}
-              isGlutenFree={isGlutenFree}
-              readyInMinutes={readyInMinutes}
-              servings={servings}
-            />
           )}
           {renderRequiredSections(
             requiredSections,
@@ -184,7 +157,7 @@ function ModalPrintPreview(props) {
             <RecipeSection title="Main Ingredients">
               <RecipeIngredientsList
                 ingredients={ingredients}
-                isRow={true}
+                isRow={false}
                 icon={listIcon}
               />
             </RecipeSection>
@@ -201,11 +174,6 @@ function ModalPrintPreview(props) {
             "Nutrition Facts",
             <NutritionFacts recipeId={recipeId} />
           )}
-          {renderRequiredSections(
-            requiredSections,
-            "Required Equipment",
-            <RequiredEquipment recipeId={recipeId} />
-          )}
         </Grid>
       </DialogContent>
     </Dialog>
@@ -217,15 +185,9 @@ ModalPrintPreview.propTypes = {
   open: PropTypes.bool.isRequired,
   recipeId: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  isVegan: PropTypes.bool.isRequired,
-  isVegetarian: PropTypes.bool.isRequired,
-  isLactoseFree: PropTypes.bool.isRequired,
-  isGlutenFree: PropTypes.bool.isRequired,
   image: PropTypes.string.isRequired,
-  readyInMinutes: PropTypes.number.isRequired,
-  servings: PropTypes.number.isRequired,
-  ingredients: PropTypes.array.isRequired,
-  instruction: PropTypes.array.isRequired,
+  ingredients: PropTypes.arrayOf(PropTypes.string).isRequired,
+  instruction: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default ModalPrintPreview;

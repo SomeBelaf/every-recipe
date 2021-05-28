@@ -19,27 +19,27 @@ const useStyles = makeStyles((theme) => ({
       transform: "scale(1.07)",
     },
   },
-  DishTypeLink: {
-    cursor: "pointer",
+  DishTypeText: {
+    cursor: "default",
     textTransform: "capitalize",
-    textDecoration: "none",
     color: theme.palette.info.main,
     fontWeight: 300,
   },
 }));
-/**Возможно убрать ссилку */
+
 function DishType({ dishType }) {
   const classes = useStyles();
   return (
     <Box component="li" className={classes.DishTypeItem}>
-      <Box component="a" className={classes.DishTypeLink}>
-        <Typography variant="caption">{dishType}</Typography>
-      </Box>
+      <Typography variant="caption" className={classes.DishTypeText}>
+        {dishType}
+      </Typography>
     </Box>
   );
 }
+
 DishType.propTypes = {
-  dishType: PropTypes.string,
+  dishType: PropTypes.string.isRequired,
 };
 
 export default DishType;

@@ -7,7 +7,7 @@ import { withStyles } from "@material-ui/core/styles";
 
 const StyledButton = withStyles({
   outlinedSizeLarge: {
-    fontSize: '1.2rem',
+    fontSize: "1.2rem",
   },
 })(Button);
 
@@ -28,7 +28,10 @@ function PrintButton(props) {
 
 PrintButton.propTypes = {
   onClick: PropTypes.func.isRequired,
-  children: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
 };
 
 export default PrintButton;

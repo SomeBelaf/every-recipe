@@ -1,16 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
-/*---------------Import components---------------*/
-import GlutenFreeIcon from "../GlutenFreeIcon/GlutenFreeIcon";
-import LactoseFreeIcon from "../LactoseFreeIcon/LactoseFreeIcon";
-import VeganIcon from "../VeganIcon/VeganIcon";
-import VegetarianIcon from "../VegetarianIcon/VegetarianIcon";
 /*---------------Import Material UI components---------------*/
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import AccessTimeRoundedIcon from "@material-ui/icons/AccessTimeRounded";
 import RoomServiceOutlinedIcon from "@material-ui/icons/RoomServiceOutlined";
 import { makeStyles } from "@material-ui/core/styles";
+/*---------------Import components---------------*/
+import GlutenFreeIcon from "../GlutenFreeIcon/GlutenFreeIcon";
+import LactoseFreeIcon from "../LactoseFreeIcon/LactoseFreeIcon";
+import VeganIcon from "../VeganIcon/VeganIcon";
+import VegetarianIcon from "../VegetarianIcon/VegetarianIcon";
 
 const useStyles = makeStyles((theme) => ({
   recipeIntro: {

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-prop-types */
 import React from "react";
 import PropTypes from "prop-types";
 /*---------------Import Material UI components---------------*/
@@ -29,8 +30,9 @@ function ImageBg(props) {
 ImageBg.propTypes = {
   src: PropTypes.string.isRequired,
   height: PropTypes.string.isRequired,
-  breakpointSmHeight: PropTypes.string,
-  breakpointMbHeight: PropTypes.string,
+  // breakpointSmHeight: PropTypes.string,
+  // breakpointMbHeight: PropTypes.string,
 };
 
 export default ImageBg;
+/* eslint-disable react/no-unused-prop-types */

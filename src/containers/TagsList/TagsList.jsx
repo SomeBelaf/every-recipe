@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-/*---------------Import components---------------*/
-import TagItem from "./TagItem/TagItem";
 /*---------------Import Material UI components---------------*/
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
+/*---------------Import components---------------*/
+import TagItem from "./TagItem/TagItem";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -59,7 +59,7 @@ function TagsList(props) {
 
   const changeTag = (index) => setCurrentTag(index);
 
-  let tags = arrOfTags.map((item, i) => {
+  const tags = arrOfTags.map((item, i) => {
     return (
       <Grid item xs="auto" key={i} className={classes.listItem}>
         <TagItem
@@ -87,6 +87,6 @@ function TagsList(props) {
 
 TagsList.propTypes = {
   changeTagData: PropTypes.func.isRequired,
-  arrOfTags: PropTypes.array.isRequired,
+  arrOfTags: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 export default TagsList;

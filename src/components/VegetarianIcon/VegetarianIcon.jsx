@@ -1,12 +1,12 @@
 import React from "react";
-/*---------------Import image---------------*/
-import vegetarian from "../../images/vegetarian.png";
 /*---------------Import Material UI components---------------*/
 import Grid from "@material-ui/core/Grid";
 import Tooltip from "@material-ui/core/Tooltip";
 import { makeStyles } from "@material-ui/core/styles";
+/*---------------Import image---------------*/
+import vegetarian from "../../images/vegetarian.png";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   container: {
     marginRight: 4,
     marginLeft: 4,
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function VegetarianIcon(props) {
+function VegetarianIcon() {
   const classes = useStyles();
   return (
     <Grid item className={classes.container}>
@@ -26,7 +26,7 @@ function VegetarianIcon(props) {
           src={vegetarian}
           alt="Vegetarian"
           className={classes.VegetarianImage}
-        ></img>
+        />
       </Tooltip>
     </Grid>
   );

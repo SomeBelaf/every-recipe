@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-/*---------------Import hooks---------------*/
-import { useMakeRequest } from "../../hooks/useMakeRequest";
-import { useConvertNutrients } from "../../hooks/useConvertNutrients";
-/*---------------Import components---------------*/
-import { Loading } from "../../customizedComponents";
 /*---------------Import Material UI components---------------*/
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+/*---------------Import hooks---------------*/
+import useMakeRequest from "../../hooks/useMakeRequest";
+import useConvertNutrients from "../../hooks/useConvertNutrients";
+/*---------------Import components---------------*/
+import { Loading } from "../../customizedComponents";
 
 // import testNutrientsData from "../../test-data-nutrients.json";
 
@@ -85,6 +85,7 @@ function NutritionFacts({ recipeId }) {
       `https://api.spoonacular.com/recipes/${recipeId}/nutritionWidget.json?apiKey=105c45c3c46749d4a2344c632ce5f2de`
     );
     setNutrientsData(nutrientsData);
+    // setNutrientsData(testNutrientsData);
   }, [recipeId, makeNutrientsRequest, setNutrientsData, nutrientsData]);
 
   if (hasError) {
@@ -101,11 +102,11 @@ function NutritionFacts({ recipeId }) {
         <Typography variant="h4" className={classes.sectionTitle}>
           Nutrition Facts
         </Typography>
-        <Box component="hr" className={classes.bigLine}></Box>
+        <Box component="hr" className={classes.bigLine} />
       </Grid>
       <Grid item xs={12}>
         <Typography variant="subtitle2">Amount Per Serving</Typography>
-        <Box component="hr" className={classes.smallLine}></Box>
+        <Box component="hr" className={classes.smallLine} />
       </Grid>
       <Grid item xs={12}>
         <Typography variant="subtitle1" className={classes.percent}>
@@ -122,7 +123,7 @@ function NutritionFacts({ recipeId }) {
             </Box>
           ))}
         </Box>
-        <Box component="hr" className={classes.smallLine}></Box>
+        <Box component="hr" className={classes.smallLine} />
         <Box component="ul" className={classes.list}>
           <Box component="li">
             <Typography variant="subtitle1">

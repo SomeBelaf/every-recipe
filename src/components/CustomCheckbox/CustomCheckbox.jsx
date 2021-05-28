@@ -19,7 +19,7 @@ const StyledCheckbox = withStyles({
   },
 })(Checkbox);
 
-function CustomCheckbox(props) {
+function CustomCheckbox() {
   return (
     <StyledCheckbox
       color="primary"

@@ -8,7 +8,7 @@ import RecipePage from "./pages/RecipePage/RecipePage";
 import Page404 from "./pages/Page404/Page404";
 import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 
-function App(props) {
+function App() {
   return (
     <BrowserRouter>
       <Header />
@@ -17,7 +17,7 @@ function App(props) {
           <ErrorBoundary variant="h4">
             <HomePage />
           </ErrorBoundary>
-        </Route>
+        </Route>  
         <Route exact path="/recipe/:recipeId">
           <ErrorBoundary variant="h4">
             <RecipePage />

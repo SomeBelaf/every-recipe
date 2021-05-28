@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-
-import DishType from "./DishType/DishType";
 /*---------------Import Material UI components---------------*/
 import Box from "@material-ui/core/Box";
+/*---------------Import components---------------*/
+import DishType from "./DishType/DishType";
 
 function DishTypeList({ data }) {
   const dishTypeList =
@@ -11,7 +11,7 @@ function DishTypeList({ data }) {
   return <Box component="ul">{dishTypeList}</Box>;
 }
 DishTypeList.propTypes = {
-  data: PropTypes.array,
+  data: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default DishTypeList;

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export function useConvertEquipment(defaultData = null) {
+export default function useConvertEquipment(defaultData = null) {
   const [data, setData] = useState(defaultData);
   const [result, setResult] = useState(undefined);
   useEffect(() => {
@@ -11,7 +11,7 @@ export function useConvertEquipment(defaultData = null) {
         image: `https://spoonacular.com/cdn/equipment_500x500/${item.image}`,
       };
     });
-    setResult(convertedData);
+    return setResult(convertedData);
   }, [data]);
   return [result, setData];
 }
